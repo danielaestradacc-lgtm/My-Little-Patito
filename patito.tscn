@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://cyy114egug1h6"]
+
+[ext_resource type="Script" uid="uid://bg3qs5mf6wd0m" path="res://algopatito.gd" id="1_t746e"]
+[ext_resource type="Texture2D" uid="uid://dbr85o5uc08tc" path="res://unnamed.png" id="2_ddj4r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01ul6"]
+atlas = ExtResource("2_ddj4r")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njlnr"]
+atlas = ExtResource("2_ddj4r")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nclp7"]
+atlas = ExtResource("2_ddj4r")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oox6l"]
+atlas = ExtResource("2_ddj4r")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5crap"]
+atlas = ExtResource("2_ddj4r")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mefg"]
+atlas = ExtResource("2_ddj4r")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qme1"]
+atlas = ExtResource("2_ddj4r")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1dgxy"]
+atlas = ExtResource("2_ddj4r")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v3per"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01ul6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njlnr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nclp7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oox6l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5crap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mefg")
+}],
+"loop": 1,
+"name": &"caminar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qme1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1dgxy")
+}],
+"loop": 1,
+"name": &"quieto",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ocga3"]
+size = Vector2(24, 32)
+
+[node name="Node2D" type="Node2D" unique_id=1054036429]
+script = ExtResource("1_t746e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=112477513]
+sprite_frames = SubResource("SpriteFrames_v3per")
+animation = &"quieto"
+frame = 1
+frame_progress = 0.5397666
+
+[node name="Area2D" type="Area2D" parent="." unique_id=511551529]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1437163666]
+shape = SubResource("RectangleShape2D_ocga3")
