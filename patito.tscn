@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bg3qs5mf6wd0m" path="res://algopatito.gd" id="1_t746e"]
 [ext_resource type="Texture2D" uid="uid://dbr85o5uc08tc" path="res://unnamed.png" id="2_ddj4r"]
+[ext_resource type="Texture2D" uid="uid://bcq3h8ph3a8av" path="res://unnamed (1).png" id="3_ddj4r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_01ul6"]
 atlas = ExtResource("2_ddj4r")
@@ -26,6 +27,14 @@ region = Rect2(128, 32, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_0mefg"]
 atlas = ExtResource("2_ddj4r")
 region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s15o2"]
+atlas = ExtResource("3_ddj4r")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jd565"]
+atlas = ExtResource("3_ddj4r")
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8qme1"]
 atlas = ExtResource("2_ddj4r")
@@ -61,10 +70,21 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 5.2,
+"texture": SubResource("AtlasTexture_s15o2")
+}, {
+"duration": 5.2,
+"texture": SubResource("AtlasTexture_jd565")
+}],
+"loop": 1,
+"name": &"domir",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.4,
 "texture": SubResource("AtlasTexture_8qme1")
 }, {
-"duration": 1.0,
+"duration": 2.4,
 "texture": SubResource("AtlasTexture_1dgxy")
 }],
 "loop": 1,
@@ -79,12 +99,13 @@ size = Vector2(24, 32)
 script = ExtResource("1_t746e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=112477513]
+scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_v3per")
-animation = &"quieto"
-frame = 1
-frame_progress = 0.5397666
+animation = &"domir"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=511551529]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1437163666]
+position = Vector2(0, 1)
+scale = Vector2(6, 6)
 shape = SubResource("RectangleShape2D_ocga3")
